@@ -1,66 +1,72 @@
 <h1>Meal details: <%= meal_details["label"]%></h1>
 
-<img src="<%= meal_details["image"]%>">
+<div class="md_box1">
+    <img src="<%= meal_details["image"]%>">
 
-<div name="health_types">
-    <h2>Health types:</h2>
-    <% health_types.each do |type| %>
-        <li><%= type%></li>
-    <% end %>
+    <div name="health_types">
+        <h2>Health types:</h2>
+        <% health_types.each do |type| %>
+            <li><%= type%></li>
+        <% end %>
+    </div>
 </div>
 
-<div name="ingredients">
-    <h2>Ingredients:</h2>
-    <% ingredients.each do |ingredient| %>
-        <li><%= ingredient%></li>
-    <% end %>
+<div class="md_box2">
+    <div name="ingredients">
+        <h2>Ingredients:</h2>
+        <% ingredients.each do |ingredient| %>
+            <li><%= ingredient%></li>
+        <% end %>
+    </div>
+
+    <div name="nutrition">
+        <h2>Nutrition:</h2>
+        <p>Total calories (kcal): <%= calories%></p>
+        
+        <li>Fat(g): <%= nutrients["FAT"]%></li>
+        <li>Carbs(g): <%= nutrients["CHOCDF"]%></li>
+        <li>Fiber(g): <%= nutrients["FIBTG"]%></li>
+        <li>Sugars(g): <%= nutrients["SUGAR"]%></li>
+        <li>Protein(g): <%= nutrients["PROCNT"]%></li>
+        <li>Cholesterol(mg): <%= nutrients["CHOLE"]%></li>
+        <li>Sodium(mg): <%= nutrients["NA"]%></li>
+        <li>Calcium(mg): <%= nutrients["CA"]%></li>
+        <li>Magnesium(mg): <%= nutrients["MG"]%></li>
+        <li>Potassium(mg): <%= nutrients["K"]%></li>
+        <li>Iron(mg): <%= nutrients["FE"]%></li>
+        <li>Zinc(mg): <%= nutrients["ZN"]%></li>
+        <li>Phosphorus(mg): <%= nutrients["P"]%></li>
+        <li>Vitamin A(µg): <%= nutrients["VITA_RAE"]%></li>
+        <li>Vitamin C(mg): <%= nutrients["VITC"]%></li>
+        <li>Thiamin B1(mg): <%= nutrients["THIA"]%></li>
+        <li>Riboflavin B2(mg): <%= nutrients["RIBF"]%></li>
+        <li>Niacin B3(mg): <%= nutrients["NIA"]%></li>
+        <li>Vitamin B6(mg): <%= nutrients["VITB6A"]%></li>
+        <li>Folate equiv (total)(µg): <%= nutrients["FOLDFE"]%></li>
+        <li>Folate (food)(µg): <%= nutrients["FOLFD"]%></li>
+        <li>Folic acid(µg): <%= nutrients["FOLAC"]%></li>
+        <li>Vitamin B12(µg): <%= nutrients["VITB12"]%></li>
+        <li>Vitamin D(µg): <%= nutrients["VITD"]%></li>
+        <li>Vitamin E(mg): <%= nutrients["TOCPHA"]%></li>
+        <li>Vitamin K(µg): <%= nutrients["VITK1"]%></li>
+        <li>Water(g): <%= nutrients["WATER"]%></li>
+    </div>
 </div>
 
-<div name="nutrition">
-    <h2>Nutrition:</h2>
-    <p>Total calories (kcal): <%= calories%></p>
-    
-    <li>Fat(g): <%= nutrients["FAT"]%></li>
-    <li>Carbs(g): <%= nutrients["CHOCDF"]%></li>
-    <li>Fiber(g): <%= nutrients["FIBTG"]%></li>
-    <li>Sugars(g): <%= nutrients["SUGAR"]%></li>
-    <li>Protein(g): <%= nutrients["PROCNT"]%></li>
-    <li>Cholesterol(mg): <%= nutrients["CHOLE"]%></li>
-    <li>Sodium(mg): <%= nutrients["NA"]%></li>
-    <li>Calcium(mg): <%= nutrients["CA"]%></li>
-    <li>Magnesium(mg): <%= nutrients["MG"]%></li>
-    <li>Potassium(mg): <%= nutrients["K"]%></li>
-    <li>Iron(mg): <%= nutrients["FE"]%></li>
-    <li>Zinc(mg): <%= nutrients["ZN"]%></li>
-    <li>Phosphorus(mg): <%= nutrients["P"]%></li>
-    <li>Vitamin A(µg): <%= nutrients["VITA_RAE"]%></li>
-    <li>Vitamin C(mg): <%= nutrients["VITC"]%></li>
-    <li>Thiamin B1(mg): <%= nutrients["THIA"]%></li>
-    <li>Riboflavin B2(mg): <%= nutrients["RIBF"]%></li>
-    <li>Niacin B3(mg): <%= nutrients["NIA"]%></li>
-    <li>Vitamin B6(mg): <%= nutrients["VITB6A"]%></li>
-    <li>Folate equiv (total)(µg): <%= nutrients["FOLDFE"]%></li>
-    <li>Folate (food)(µg): <%= nutrients["FOLFD"]%></li>
-    <li>Folic acid(µg): <%= nutrients["FOLAC"]%></li>
-    <li>Vitamin B12(µg): <%= nutrients["VITB12"]%></li>
-    <li>Vitamin D(µg): <%= nutrients["VITD"]%></li>
-    <li>Vitamin E(mg): <%= nutrients["TOCPHA"]%></li>
-    <li>Vitamin K(µg): <%= nutrients["VITK1"]%></li>
-    <li>Water(g): <%= nutrients["WATER"]%></li>
+<div class="md_box3">
+    <p>See full recipe: <a href="<%= meal_details["url"]%>">click here</p>
+
+    <form action="/meals" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <input name="day_of_week" type="hidden" value="<%= params["day_of_week"]%>">
+    <input name="meal_course" type="hidden" value="<%= params["meal_course"]%>">
+    <input name="label" type="hidden" value="<%= meal_details["label"]%>">
+    <input name="uri" type="hidden" value="<%= uri%>">
+    <button id="btn_add">Add Meal</button>
+    </form>
+
+    <form action="/select_meal" method="get">
+        <input type="hidden" name="meal" value="<%=params["q"]%>">
+        <button id="btn_back">Back</button>
+    </form>
 </div>
-
-<p>See full recipe: <a href="<%= meal_details["url"]%>">click here</p>
-
-<form action="/meals" method="post">
-  <input type="hidden" name="_method" value="patch">
-  <input name="day_of_week" type="hidden" value="<%= params["day_of_week"]%>">
-  <input name="meal_course" type="hidden" value="<%= params["meal_course"]%>">
-  <input name="label" type="hidden" value="<%= meal_details["label"]%>">
-  <input name="uri" type="hidden" value="<%= uri%>">
-  <button>Add Meal</button>
-</form>
-
-<form action="/select_meal" method="get">
-    <input type="hidden" name="meal" value="<%=params["q"]%>">
-    <button>Back</button>
-</form>

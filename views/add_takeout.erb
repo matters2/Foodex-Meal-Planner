@@ -1,23 +1,25 @@
 <h1>Add takeout:</h1>
 
-<form action="/meals" method="post">
-    <input type="hidden" name="_method" value="patch">  
-    <input name="label" type="hidden" value="Takeout">
-  
-  <select id="day_of_week" name="day_of_week">
-    <option value="Monday">Monday</option>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-    <option value="Friday">Friday</option>
-    <option value="Saturday">Saturday</option>
-    <option value="Sunday">Sunday</option>
-  </select>
+<div class="add_box1">
+  <form action="/meals" method="post">
+      <input type="hidden" name="_method" value="patch">  
+      <input name="label" type="hidden" value="Takeout">
+    
+    <select id="day_of_week" name="day_of_week">
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
 
-  <select id="meal_course" name="meal_course">
-    <option value="Breakfast">Breakfast</option>
-    <option value="Lunch">Lunch</option>
-    <option value="Dinner">Dinner</option>
-  </select>
-  <button>submit</button>
-</form>
+    <select id="meal_course" name="meal_course">
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+    </select>
+    <button id="btn_submit">submit</button>
+  </form>
+</div>

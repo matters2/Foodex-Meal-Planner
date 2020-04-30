@@ -1,4 +1,3 @@
-     
 require 'sinatra'
 require 'sinatra/reloader' if development?
 require 'pry' if development?
@@ -21,11 +20,7 @@ end
 reset_planner()
 
 get '/' do
-  meals = all_meals()
-
-  #Code to be written here to get URI from PSQL and use to link back to meal_details, so user can click on selection and take them back to meal_details page
-
-  erb :index, locals: {meals: meals}
+  erb :login
 end
 
 get '/new_meal' do
@@ -103,27 +98,28 @@ end
 patch '/meals' do
   update_dish(params["day_of_week"], params["meal_course"], params["label"])
   add_dish_details(params["label"], params["uri"])
-  redirect "/"
+  redirect "/home"
 end
 
 patch '/reset_planner' do
   reset_planner()
-  redirect "/"
+  redirect "/home"
 end
 
 get '/add_takeout' do
   erb :add_takeout
 end
 
-get '/login' do
-  erb :login
+get '/home' do
+  meals = all_meals()
+  erb :index, locals: {meals: meals}
 end
 
 post '/login' do
   user = find_user_by_email( params[:email] )
   if user && BCrypt::Password.new(user["password_digest"]) == params[:password]
     session[:user_id] = user['id']
-    redirect "/"
+    redirect "/home"
   else
     erb :login
   end
@@ -131,7 +127,7 @@ end
 
 delete '/logout' do
   session[:user_id] = nil
-  redirect "/login"
+  redirect "/"
 end
 
 get '/calc_budget' do

@@ -1,11 +1,14 @@
-<h1>Select meal:</h1>
+<h1>Select meal from options below:</h1>
 
-<% meals.each do |meal| %>
-        
+<div class="meal_selections">
+    
+    <% meals.each do |meal| %>
+     
     <p><a href="/meal_details?r=<%= meal["uri_code"]%>&q=<%= result["q"]%>&meal_course=<%= params["meal_course"]%>&day_of_week=<%= params["day_of_week"]%>"><%= meal["label"]%></p>
 
-<% end %>
-
-<form action="/new_meal" method="get">
-    <button>Back</button>
-</form>
+    <% end %>
+    
+    <form action="/new_meal" method="get">
+        <button id="btn_back">Back</button>
+    </form>
+</div>

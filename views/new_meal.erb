@@ -1,23 +1,25 @@
 <h1>Search for new meal:</h1>
 
-<form action="/select_meal" method="get">
-  <label for=""></label>
-  <input name="meal" type="text">
-  <button>Search</button>
+<div class="meal_search">
+  <form action="/select_meal" method="get">
+    <label for=""></label>
+    <input name="meal" type="text">
   
-  <select id="day_of_week" name="day_of_week">
-    <option value="Monday">Monday</option>
-    <option value="Tuesday">Tuesday</option>
-    <option value="Wednesday">Wednesday</option>
-    <option value="Thursday">Thursday</option>
-    <option value="Friday">Friday</option>
-    <option value="Saturday">Saturday</option>
-    <option value="Sunday">Sunday</option>
-  </select>
+    <select id="day_of_week" name="day_of_week">
+      <option value="Monday">Monday</option>
+      <option value="Tuesday">Tuesday</option>
+      <option value="Wednesday">Wednesday</option>
+      <option value="Thursday">Thursday</option>
+      <option value="Friday">Friday</option>
+      <option value="Saturday">Saturday</option>
+      <option value="Sunday">Sunday</option>
+    </select>
 
-  <select id="meal_course" name="meal_course">
-    <option value="Breakfast">Breakfast</option>
-    <option value="Lunch">Lunch</option>
-    <option value="Dinner">Dinner</option>
-  </select>
-</form>
+    <select id="meal_course" name="meal_course">
+      <option value="Breakfast">Breakfast</option>
+      <option value="Lunch">Lunch</option>
+      <option value="Dinner">Dinner</option>
+    </select>
+    <button id="btn_search">Search</button>
+  </form> 
+</div>

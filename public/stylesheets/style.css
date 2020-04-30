@@ -1,0 +1,51 @@
+body {
+    background:;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.buttons-meal-planner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    padding: 15px;
+    color: #6c7ae0;
+}
+
+#btn_find_meal, #btn_reset, #btn_add_takeout, #btn_calc, #btn_logout, #btn_back, #btn_search, #btn_add, #btn_submit {
+    padding: 5px;
+    font-size: 10px;
+    box-shadow: 1px 1px #888888;
+}
+
+#btn_back {
+    text-align: center;
+    margin-top: 10px;
+}
+
+button {
+    border-radius: 2px;
+}
+
+.meal_selections, .meal_search {
+    text-align: center;
+}
+
+img {
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.md_box1, .md_box2, .md_box3 {
+    text-align: center;
+    list-style-type: none;
+    color: #6c7ae0;
+}
+
+.add_box1 {
+    text-align: center;
+}

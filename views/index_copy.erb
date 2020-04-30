@@ -1,0 +1,44 @@
+<h1>Foodex - The Meal Planning App:</h1>
+
+<a href="/new_meal">Find meal</a>
+<a href="/add_takeout">Add takeout</a>
+
+<div class="week_planner_table">
+    <div class="Monday">
+    <p><%= meals[0]["day_of_week"] %> Breakfast - <%= meals[0]["breakfast"]%> Lunch - <%= meals[0]["lunch"]%> Dinner - <%= meals[0]["dinner"]%></p>
+    </div>
+
+    <p><%= meals[1]["day_of_week"] %> Breakfast - <%= meals[1]["breakfast"]%> Lunch - <%= meals[1]["lunch"]%> Dinner - <%= meals[1]["dinner"]%></p>
+
+    <p><%= meals[2]["day_of_week"] %> Breakfast - <%= meals[2]["breakfast"]%> Lunch - <%= meals[2]["lunch"]%> Dinner - <%= meals[2]["dinner"]%></p>
+
+    <p><%= meals[3]["day_of_week"] %> Breakfast - <%= meals[3]["breakfast"]%> Lunch - <%= meals[3]["lunch"]%> Dinner - <%= meals[3]["dinner"]%></p>
+
+    <p><%= meals[4]["day_of_week"] %> Breakfast - <%= meals[4]["breakfast"]%> Lunch - <%= meals[4]["lunch"]%> Dinner - <%= meals[4]["dinner"]%></p>
+
+    <p><%= meals[5]["day_of_week"] %> Breakfast - <%= meals[5]["breakfast"]%> Lunch - <%= meals[5]["lunch"]%> Dinner - <%= meals[5]["dinner"]%></p>
+
+    <p><%= meals[6]["day_of_week"] %> Breakfast - <%= meals[6]["breakfast"]%> Lunch - <%= meals[6]["lunch"]%> Dinner - <%= meals[6]["dinner"]%></p>
+</div>
+
+<div>
+    <form action="/reset_planner" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <button>Reset</button>
+    </form>
+
+    <form action="/calc_budget" method="get">
+    <button>Calculate</button>
+    </form>
+</div>
+
+<div>
+    <% if logged_in? %>
+        Logged in as:<%= find_user_by_id(session[:user_id])['email'] %>
+        <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Logout</button>
+        </form>
+    <% end %>
+</div>
+    
