@@ -131,5 +131,30 @@ delete '/logout' do
 end
 
 get '/calc_budget' do
-    erb :calculate_budget
+
+  results = all_meals()
+
+  array = []
+
+  #array of hashes
+
+  results.each do |elem|
+
+    array.push(elem["breakfast"])
+    array.push(elem["lunch"])
+    array.push(elem["dinner"])
+  end
+  
+  new_array = array.compact().uniq()
+  
+  recipes = []
+
+  new_array.each do |elem|
+
+    if (elem != 'Takeout')
+      recipes.push(elem)
+    end
+  end
+
+    erb(:calculate_budget, locals: {recipes: recipes})
 end
