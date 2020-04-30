@@ -4,56 +4,24 @@
 <a href="/add_takeout">Add takeout</a>
 
 <div class="week_planner_table">
-    <div class="monday">
-        <p><%= meals[0]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[0]["breakfast"]%></p>
-        <p>Lunch: <%= meals[0]["lunch"]%></p> 
-        <p>Dinner: <%= meals[0]["dinner"]%></p>
+    <div class="Monday">
+    <p><%= meals[0]["day_of_week"] %> Breakfast - <%= meals[0]["breakfast"]%> Lunch - <%= meals[0]["lunch"]%> Dinner - <%= meals[0]["dinner"]%></p>
     </div>
 
-    <div class="tuesday">
-        <p><%= meals[1]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[1]["breakfast"]%></p>
-        <p>Lunch: <%= meals[1]["lunch"]%></p> 
-        <p>Dinner: <%= meals[1]["dinner"]%></p>
-    </div>
+    <p><%= meals[1]["day_of_week"] %> Breakfast - <%= meals[1]["breakfast"]%> Lunch - <%= meals[1]["lunch"]%> Dinner - <%= meals[1]["dinner"]%></p>
 
-    <div class="wednesday">
-        <p><%= meals[2]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[2]["breakfast"]%></p>
-        <p>Lunch: <%= meals[2]["lunch"]%></p> 
-        <p>Dinner: <%= meals[2]["dinner"]%></p>
-    </div>
+    <p><%= meals[2]["day_of_week"] %> Breakfast - <%= meals[2]["breakfast"]%> Lunch - <%= meals[2]["lunch"]%> Dinner - <%= meals[2]["dinner"]%></p>
 
-    <div class="thursday">
-        <p><%= meals[3]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[3]["breakfast"]%></p>
-        <p>Lunch: <%= meals[3]["lunch"]%></p> 
-        <p>Dinner: <%= meals[3]["dinner"]%></p>
-    </div>
+    <p><%= meals[3]["day_of_week"] %> Breakfast - <%= meals[3]["breakfast"]%> Lunch - <%= meals[3]["lunch"]%> Dinner - <%= meals[3]["dinner"]%></p>
 
-    <div class="friday">
-        <p><%= meals[4]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[4]["breakfast"]%></p>
-        <p>Lunch: <%= meals[4]["lunch"]%></p> 
-        <p>Dinner: <%= meals[4]["dinner"]%></p>
-    </div>
+    <p><%= meals[4]["day_of_week"] %> Breakfast - <%= meals[4]["breakfast"]%> Lunch - <%= meals[4]["lunch"]%> Dinner - <%= meals[4]["dinner"]%></p>
 
-    <div class="Saturday">
-        <p><%= meals[5]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[5]["breakfast"]%></p>
-        <p>Lunch: <%= meals[5]["lunch"]%></p> 
-        <p>Dinner: <%= meals[5]["dinner"]%></p>
-    </div>
+    <p><%= meals[5]["day_of_week"] %> Breakfast - <%= meals[5]["breakfast"]%> Lunch - <%= meals[5]["lunch"]%> Dinner - <%= meals[5]["dinner"]%></p>
 
-    <div class="Sunday">
-        <p><%= meals[6]["day_of_week"] %></p>
-        <p>Breakfast: <%= meals[6]["breakfast"]%></p>
-        <p>Lunch: <%= meals[6]["lunch"]%></p> 
-        <p>Dinner: <%= meals[6]["dinner"]%></p>
-    </div>
-    </div>
+    <p><%= meals[6]["day_of_week"] %> Breakfast - <%= meals[6]["breakfast"]%> Lunch - <%= meals[6]["lunch"]%> Dinner - <%= meals[6]["dinner"]%></p>
+</div>
 
+<div>
     <form action="/reset_planner" method="post">
     <input type="hidden" name="_method" value="patch">
     <button>Reset</button>
@@ -62,3 +30,15 @@
     <form action="/calc_budget" method="get">
     <button>Calculate</button>
     </form>
+</div>
+
+<div>
+    <% if logged_in? %>
+        Logged in as:<%= find_user_by_id(session[:user_id])['email'] %>
+        <form action="/logout" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button>Logout</button>
+        </form>
+    <% end %>
+</div>
+    
