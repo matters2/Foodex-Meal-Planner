@@ -1,0 +1,64 @@
+<h1>Foodex - The Meal Planning App:</h1>
+
+<a href="/new_meal">Find meal</a>
+<a href="/add_takeout">Add takeout</a>
+
+<div class="week_planner_table">
+    <div class="monday">
+        <p><%= meals[0]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[0]["breakfast"]%></p>
+        <p>Lunch: <%= meals[0]["lunch"]%></p> 
+        <p>Dinner: <%= meals[0]["dinner"]%></p>
+    </div>
+
+    <div class="tuesday">
+        <p><%= meals[1]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[1]["breakfast"]%></p>
+        <p>Lunch: <%= meals[1]["lunch"]%></p> 
+        <p>Dinner: <%= meals[1]["dinner"]%></p>
+    </div>
+
+    <div class="wednesday">
+        <p><%= meals[2]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[2]["breakfast"]%></p>
+        <p>Lunch: <%= meals[2]["lunch"]%></p> 
+        <p>Dinner: <%= meals[2]["dinner"]%></p>
+    </div>
+
+    <div class="thursday">
+        <p><%= meals[3]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[3]["breakfast"]%></p>
+        <p>Lunch: <%= meals[3]["lunch"]%></p> 
+        <p>Dinner: <%= meals[3]["dinner"]%></p>
+    </div>
+
+    <div class="friday">
+        <p><%= meals[4]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[4]["breakfast"]%></p>
+        <p>Lunch: <%= meals[4]["lunch"]%></p> 
+        <p>Dinner: <%= meals[4]["dinner"]%></p>
+    </div>
+
+    <div class="Saturday">
+        <p><%= meals[5]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[5]["breakfast"]%></p>
+        <p>Lunch: <%= meals[5]["lunch"]%></p> 
+        <p>Dinner: <%= meals[5]["dinner"]%></p>
+    </div>
+
+    <div class="Sunday">
+        <p><%= meals[6]["day_of_week"] %></p>
+        <p>Breakfast: <%= meals[6]["breakfast"]%></p>
+        <p>Lunch: <%= meals[6]["lunch"]%></p> 
+        <p>Dinner: <%= meals[6]["dinner"]%></p>
+    </div>
+    </div>
+
+    <form action="/reset_planner" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <button>Reset</button>
+    </form>
+
+    <form action="/calc_budget" method="get">
+    <button>Calculate</button>
+    </form>

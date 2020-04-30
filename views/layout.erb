@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Foodex</title>
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%= yield %>
+
+<% if logged_in? %>
+    Logged in:<%= find_user_by_id(session[:user_id])['email'] %>
+    <form action="/logout" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button>Logout</button>
+    </form>
+  <% end %>
+
+
+</body>
+</html>
