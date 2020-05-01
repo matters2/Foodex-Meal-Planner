@@ -29,8 +29,8 @@ end
 
 get '/select_meal' do
 
-  edamam_app_id = "7b26061b"
-  edamam_app_key = "fdda13e00a7171c133e27130253ac408"
+  edamam_app_id = ENV['MY_API_ID']
+  edamam_app_key = ENV['MY_API_KEY']
   
   url = "https://api.edamam.com/search?q=#{params["meal"]}&app_id=#{edamam_app_id}&app_key=#{edamam_app_key}&from=0&to=10"
 
@@ -57,8 +57,8 @@ end
 
 get '/meal_details' do
 
-  edamam_app_id = "7b26061b"
-  edamam_app_key = "fdda13e00a7171c133e27130253ac408"
+  edamam_app_id = ENV['MY_API_ID']
+  edamam_app_key = ENV['MY_API_KEY']
   
   url = "https://api.edamam.com/search?r=http%3A%2F%2Fwww.edamam.com%2Fontologies%2Fedamam.owl%23recipe_#{params["r"]}&app_id=#{edamam_app_id}&app_key=#{edamam_app_key}"
 
