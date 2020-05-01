@@ -1,6 +1,6 @@
 <h1>GA Software Engineering Immersive - Project 2</h1>
 
-<h2>:avacado: Foodex - Meal Planner :mushroom:</h2>
+<h2>:avocado: Foodex - Meal Planner :mushroom:</h2>
 
 Intro:
 Project requirement is to build a CRUD web application (both frontend and backend) that has been built with Ruby, Postgres and the Sinatra framework. This application also is to be used as a weekly meal planner and to provide detailed information through processing requests with an external third-party API Edamam.
