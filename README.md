@@ -2,7 +2,7 @@
 
 <h2>:avocado: Foodex - Meal Planner :mushroom:</h2>
 
-Intro:
+:cucumber:Intro:
 Project requirement is to build a CRUD web application (both frontend and backend) that has been built with Ruby, Postgres and the Sinatra framework. This application also is to be used as a weekly meal planner and to provide detailed information through processing requests with an external third-party API Edamam.
 
 :key:Features:
