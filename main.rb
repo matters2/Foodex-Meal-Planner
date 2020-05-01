@@ -145,16 +145,19 @@ get '/calc_budget' do
     array.push(elem["dinner"])
   end
   
-  new_array = array.compact().uniq()
-  
-  recipes = []
+  new_array = []
 
-  new_array.each do |elem|
+  array.each do |elem|
 
     if (elem != 'Takeout')
-      recipes.push(elem)
+      new_array.push(elem)
     end
   end
 
-    erb(:calculate_budget, locals: {recipes: recipes})
+  array_count = new_array.compact()
+
+  counts = Hash.new(0)
+  array_count.each { |recipe| counts[recipe] += 1 }
+
+    erb(:calculate_budget, locals: {recipe_count: counts})
 end

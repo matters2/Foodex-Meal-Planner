@@ -1,13 +1,19 @@
 <h1>Shopping List:</h1>
 
 <div class="shopping_list">
-    <h2>Recipes:</h2>
+    <h2>Recipe count (excluding takeaway):</h2>
 
-    <% recipes.each do |recipe| %>
-        <p><%= recipe%></p>
+    <% recipe_count.each do |key, value| %>
+        <p><%= value%> x <%= key%></p>
     <% end %>
-    
-    <form action="/home" method="get">
+
+
+<div class="shop_total_ingred"> <h2>Total Ingredients - Table:</h2></div>
+
+<div class="shop_total_ingred"><h2>Projected Cost - Weekly Groceries ($):</h2></div>
+
+<form action="/home" method="get">
         <button id="btn_back">Back</button>
     </form>
+
 </div>

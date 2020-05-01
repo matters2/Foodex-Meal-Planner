@@ -15,6 +15,14 @@ h1 {
     color: #6c7ae0;
 }
 
+h2 {
+    text-align: center;
+    padding: 10px;
+    color: #6c7ae0;
+    font-size: 15px;
+    
+}
+
 #btn_find_meal, #btn_reset, #btn_add_takeout, #btn_calc, #btn_logout, #btn_back, #btn_search, #btn_add, #btn_submit {
     padding: 5px;
     font-size: 10px;
